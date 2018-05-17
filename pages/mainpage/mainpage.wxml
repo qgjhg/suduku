@@ -93,6 +93,6 @@
   <view id='box99' class='numberbox'>{{text99}}</view>
 </view>
 
-<button bindtap='bindMain'>123</button>
+<button bindtap='bindMain'>test</button>
 
 <text>{{test}}</text>

@@ -1,4 +1,13 @@
 // pages/mainpage/mainpage.js
+
+
+var num = new Array();
+for (var i = 0; i < 9; i++) {
+  num[i] = new Array(i);
+  for (var j = 0; j < 9; j++) {
+    num[i][j] = 0;
+  }
+}
 Page({
   /**
    * 页面的初始数据
@@ -42,29 +51,82 @@ Page({
 
   onReady: function () {
     //creat sudu
-    var num = new Array();
-    for (var i = 0; i < 9; i++) {
-      num[i] = new Array(i);
-      for (var j = 0; j < 9; j++) {
-        num[i][j] = 0;
-      }
-    }
-    try {
-      var allnum = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-      
-      
 
+
+    try {
+      var numline=ran3_3();
+      var changenum=[0,3,6,1,4,7,2,5,8];
+      for (var line = 0; line < 9; line++) {
+        for (var up = 0; up < 9; up++) {
+          num[line][up] = numline[tnine(up , changenum[line])];
+        }
+      }
+      
+      for(var CTimes=0;CTimes<10;CTimes++){
+        var Cran=Math.floor(Math.random()*3)*3+1;
+        var ran = Math.floor(Math.random() * 3);
+        if(ran==0)
+        {
+          var reline = num[Cran];
+          num[Cran]=num[Cran-1];
+          num[Cran-1]=reline;
+        }else if(ran==1)
+        {
+          var reline = num[Cran];
+          num[Cran] = num[Cran + 1];
+          num[Cran + 1] = reline;
+        }else if(ran=2)
+        {
+          var reline = num[Cran-1];
+          num[Cran-1] = num[Cran + 1];
+          num[Cran + 1] = reline;
+        }
+      }
+      for(var CTimes=0;CTimes<10;CTimes++){
+        var Cran = Math.floor(Math.random() * 3) * 3 + 1;
+        var ran = Math.floor(Math.random() * 3);
+        var reline = new Array(9);
+        if (ran == 0) {
+          for(var k=0;k<9;k++){
+          reline[k] = num[k][Cran];
+          num[k][Cran] = num[k][Cran - 1];
+          num[k][Cran - 1] = reline[k];
+          }
+        } else if (ran == 1) {
+          for(var k=0;k<9;k++){
+          reline[k] = num[k][Cran];
+          num[k][Cran] = num[k][Cran + 1];
+          num[k][Cran + 1] = reline[k];}
+        } else if (ran = 2) {
+          for(var k=0;k<9;k++){
+          reline[k] = num[Cran - 1];
+          num[k][Cran - 1] = num[k][Cran + 1];
+          num[k][Cran + 1] = reline[k];}
+        }
+      }
 
       for (var line = 1; line < 10; line++) {
         for (var up = 1; up < 10; up++) {
           var boxname = 'text' + line + up;
           this.setData({
-            [boxname]: '1'
+            [boxname]: num[line-1][up-1]
           })
         }
       }
     } finally {
 
+    }
+
+    function tnine(num,line)
+    {
+      var outnum=0;
+      if(num+line>8){
+        outnum=num+line-8;
+      }else
+      {
+        outnum=num+line;
+      }
+      return outnum;
     }
 
     //random1-9
