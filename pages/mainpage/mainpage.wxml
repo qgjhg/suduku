@@ -1,0 +1,98 @@
+<!--pages/mainpage/mainpage.wxml-->
+
+<view class='linebox'>
+  <view id='box11' class='numberbox'>{{text11}}</view>
+  <view id='box12' class='numberbox'>{{text12}}</view>
+  <view id='box13' class='numberbox'>{{text13}}</view>
+  <view id='box14' class='numberbox'>{{text14}}</view>
+  <view id='box15' class='numberbox'>{{text15}}</view>
+  <view id='box16' class='numberbox'>{{text16}}</view>
+  <view id='box17' class='numberbox'>{{text17}}</view>
+  <view id='box18' class='numberbox'>{{text18}}</view>
+  <view id='box19' class='numberbox'>{{text19}}</view>
+</view>
+<view class='linebox'>
+  <view id='box21' class='numberbox'>{{text21}}</view>
+  <view id='box22' class='numberbox'>{{text22}}</view>
+  <view id='box23' class='numberbox'>{{text23}}</view>
+  <view id='box24' class='numberbox'>{{text24}}</view>
+  <view id='box25' class='numberbox'>{{text25}}</view>
+  <view id='box26' class='numberbox'>{{text26}}</view>
+  <view id='box27' class='numberbox'>{{text27}}</view>
+  <view id='box28' class='numberbox'>{{text28}}</view>
+  <view id='box29' class='numberbox'>{{text29}}</view>
+</view><view class='linebox'>
+  <view id='box31' class='numberbox'>{{text31}}</view>
+  <view id='box32' class='numberbox'>{{text32}}</view>
+  <view id='box33' class='numberbox'>{{text33}}</view>
+  <view id='box34' class='numberbox'>{{text34}}</view>
+  <view id='box35' class='numberbox'>{{text35}}</view>
+  <view id='box36' class='numberbox'>{{text36}}</view>
+  <view id='box37' class='numberbox'>{{text37}}</view>
+  <view id='box38' class='numberbox'>{{text38}}</view>
+  <view id='box39' class='numberbox'>{{text39}}</view>
+</view><view class='linebox'>
+  <view id='box41' class='numberbox'>{{text41}}</view>
+  <view id='box42' class='numberbox'>{{text42}}</view>
+  <view id='box43' class='numberbox'>{{text43}}</view>
+  <view id='box44' class='numberbox'>{{text44}}</view>
+  <view id='box45' class='numberbox'>{{text45}}</view>
+  <view id='box46' class='numberbox'>{{text46}}</view>
+  <view id='box47' class='numberbox'>{{text47}}</view>
+  <view id='box48' class='numberbox'>{{text48}}</view>
+  <view id='box49' class='numberbox'>{{text49}}</view>
+</view><view class='linebox'>
+  <view id='box51' class='numberbox'>{{text51}}</view>
+  <view id='box52' class='numberbox'>{{text52}}</view>
+  <view id='box53' class='numberbox'>{{text53}}</view>
+  <view id='box54' class='numberbox'>{{text54}}</view>
+  <view id='box55' class='numberbox'>{{text55}}</view>
+  <view id='box56' class='numberbox'>{{text56}}</view>
+  <view id='box57' class='numberbox'>{{text57}}</view>
+  <view id='box58' class='numberbox'>{{text58}}</view>
+  <view id='box59' class='numberbox'>{{text59}}</view>
+</view><view class='linebox'>
+  <view id='box61' class='numberbox'>{{text61}}</view>
+  <view id='box62' class='numberbox'>{{text62}}</view>
+  <view id='box63' class='numberbox'>{{text63}}</view>
+  <view id='box64' class='numberbox'>{{text64}}</view>
+  <view id='box65' class='numberbox'>{{text65}}</view>
+  <view id='box66' class='numberbox'>{{text66}}</view>
+  <view id='box67' class='numberbox'>{{text67}}</view>
+  <view id='box68' class='numberbox'>{{text68}}</view>
+  <view id='box69' class='numberbox'>{{text69}}</view>
+</view><view class='linebox'>
+  <view id='box71' class='numberbox'>{{text71}}</view>
+  <view id='box72' class='numberbox'>{{text72}}</view>
+  <view id='box73' class='numberbox'>{{text73}}</view>
+  <view id='box74' class='numberbox'>{{text74}}</view>
+  <view id='box75' class='numberbox'>{{text75}}</view>
+  <view id='box76' class='numberbox'>{{text76}}</view>
+  <view id='box77' class='numberbox'>{{text77}}</view>
+  <view id='box78' class='numberbox'>{{text78}}</view>
+  <view id='box79' class='numberbox'>{{text79}}</view>
+</view><view class='linebox'>
+  <view id='box81' class='numberbox'>{{text81}}</view>
+  <view id='box82' class='numberbox'>{{text82}}</view>
+  <view id='box83' class='numberbox'>{{text83}}</view>
+  <view id='box84' class='numberbox'>{{text84}}</view>
+  <view id='box85' class='numberbox'>{{text85}}</view>
+  <view id='box86' class='numberbox'>{{text86}}</view>
+  <view id='box87' class='numberbox'>{{text87}}</view>
+  <view id='box88' class='numberbox'>{{text88}}</view>
+  <view id='box89' class='numberbox'>{{text89}}</view>
+</view><view class='linebox'>
+  <view id='box91' class='numberbox'>{{text91}}</view>
+  <view id='box92' class='numberbox'>{{text92}}</view>
+  <view id='box93' class='numberbox'>{{text93}}</view>
+  <view id='box94' class='numberbox'>{{text94}}</view>
+  <view id='box95' class='numberbox'>{{text95}}</view>
+  <view id='box96' class='numberbox'>{{text96}}</view>
+  <view id='box97' class='numberbox'>{{text97}}</view>
+  <view id='box98' class='numberbox'>{{text98}}</view>
+  <view id='box99' class='numberbox'>{{text99}}</view>
+</view>
+
+<button bindtap='bindMain'>123</button>
+
+<text>{{test}}</text>
