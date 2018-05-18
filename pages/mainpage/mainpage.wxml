@@ -1,96 +1,96 @@
 <!--pages/mainpage/mainpage.wxml-->
 <view class='outbox'>
 <view class='linebox'>
-  <view id='box11' class='numberbox'>{{text11}}</view>
-  <view id='box12' class='numberbox'>{{text12}}</view>
-  <view id='box13' class='numberbox thirdbox'>{{text13}}</view>
-  <view id='box14' class='numberbox'>{{text14}}</view>
-  <view id='box15' class='numberbox'>{{text15}}</view>
-  <view id='box16' class='numberbox thirdbox'>{{text16}}</view>
-  <view id='box17' class='numberbox'>{{text17}}</view>
-  <view id='box18' class='numberbox'>{{text18}}</view>
-  <view id='box19' class='numberbox'>{{text19}}</view>
+  <view id='box11' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor11}};'>{{text11}}</view>
+  <view id='box12' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor12}};'>{{text12}}</view>
+  <view id='box13' bindtap='chooseTap' class='numberbox thirdbox' style='background-color:{{boxcolor13}};'>{{text13}}</view>
+  <view id='box14' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor14}};'>{{text14}}</view>
+  <view id='box15' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor15}};'>{{text15}}</view>
+  <view id='box16' bindtap='chooseTap' class='numberbox thirdbox' style='background-color:{{boxcolor16}};'>{{text16}}</view>
+  <view id='box17' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor17}};'>{{text17}}</view>
+  <view id='box18' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor18}};'>{{text18}}</view>
+  <view id='box19' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor19}};'>{{text19}}</view>
 </view>
 <view class='linebox'>
-  <view id='box21' class='numberbox'>{{text21}}</view>
-  <view id='box22' class='numberbox'>{{text22}}</view>
-  <view id='box23' class='numberbox thirdbox'>{{text23}}</view>
-  <view id='box24' class='numberbox'>{{text24}}</view>
-  <view id='box25' class='numberbox'>{{text25}}</view>
-  <view id='box26' class='numberbox thirdbox'>{{text26}}</view>
-  <view id='box27' class='numberbox'>{{text27}}</view>
-  <view id='box28' class='numberbox'>{{text28}}</view>
-  <view id='box29' class='numberbox'>{{text29}}</view>
+  <view id='box21' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor21}};'>{{text21}}</view>
+  <view id='box22' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor22}};'>{{text22}}</view>
+  <view id='box23' bindtap='chooseTap' class='numberbox thirdbox' style='background-color:{{boxcolor23}};'>{{text23}}</view>
+  <view id='box24' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor24}};'>{{text24}}</view>
+  <view id='box25' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor25}};'>{{text25}}</view>
+  <view id='box26' bindtap='chooseTap' class='numberbox thirdbox' style='background-color:{{boxcolor26}};'>{{text26}}</view>
+  <view id='box27' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor27}};'>{{text27}}</view>
+  <view id='box28' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor28}};'>{{text28}}</view>
+  <view id='box29' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor29}};'>{{text29}}</view>
 </view><view class='linebox'>
-  <view id='box31' class='numberbox thirddownbox'>{{text31}}</view>
-  <view id='box32' class='numberbox thirddownbox'>{{text32}}</view>
-  <view id='box33' class='numberbox thirdbox thirddownbox'>{{text33}}</view>
-  <view id='box34' class='numberbox thirddownbox'>{{text34}}</view>
-  <view id='box35' class='numberbox thirddownbox'>{{text35}}</view>
-  <view id='box36' class='numberbox thirdbox thirddownbox'>{{text36}}</view>
-  <view id='box37' class='numberbox thirddownbox'>{{text37}}</view>
-  <view id='box38' class='numberbox thirddownbox'>{{text38}}</view>
-  <view id='box39' class='numberbox thirddownbox'>{{text39}}</view>
+  <view id='box31' bindtap='chooseTap' class='numberbox thirddownbox' style='background-color:{{boxcolor31}};'>{{text31}}</view>
+  <view id='box32' bindtap='chooseTap' class='numberbox thirddownbox' style='background-color:{{boxcolor32}};'>{{text32}}</view>
+  <view id='box33' bindtap='chooseTap' class='numberbox thirdbox thirddownbox' style='background-color:{{boxcolor33}};'>{{text33}}</view>
+  <view id='box34' bindtap='chooseTap' class='numberbox thirddownbox' style='background-color:{{boxcolor34}};'>{{text34}}</view>
+  <view id='box35' bindtap='chooseTap' class='numberbox thirddownbox' style='background-color:{{boxcolor35}};'>{{text35}}</view>
+  <view id='box36' bindtap='chooseTap' class='numberbox thirdbox thirddownbox' style='background-color:{{boxcolor36}};'>{{text36}}</view>
+  <view id='box37' bindtap='chooseTap' class='numberbox thirddownbox' style='background-color:{{boxcolor37}};'>{{text37}}</view>
+  <view id='box38' bindtap='chooseTap' class='numberbox thirddownbox' style='background-color:{{boxcolor38}};'>{{text38}}</view>
+  <view id='box39' bindtap='chooseTap' class='numberbox thirddownbox' style='background-color:{{boxcolor39}};'>{{text39}}</view>
 </view><view class='linebox'>
-  <view id='box41' class='numberbox'>{{text41}}</view>
-  <view id='box42' class='numberbox'>{{text42}}</view>
-  <view id='box43' class='numberbox thirdbox'>{{text43}}</view>
-  <view id='box44' class='numberbox'>{{text44}}</view>
-  <view id='box45' class='numberbox'>{{text45}}</view>
-  <view id='box46' class='numberbox thirdbox'>{{text46}}</view>
-  <view id='box47' class='numberbox'>{{text47}}</view>
-  <view id='box48' class='numberbox'>{{text48}}</view>
-  <view id='box49' class='numberbox'>{{text49}}</view>
+  <view id='box41' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor41}};'>{{text41}}</view>
+  <view id='box42' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor42}};'>{{text42}}</view>
+  <view id='box43' bindtap='chooseTap' class='numberbox thirdbox' style='background-color:{{boxcolor43}};'>{{text43}}</view>
+  <view id='box44' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor44}};'>{{text44}}</view>
+  <view id='box45' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor45}};'>{{text45}}</view>
+  <view id='box46' bindtap='chooseTap' class='numberbox thirdbox' style='background-color:{{boxcolor46}};'>{{text46}}</view>
+  <view id='box47' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor47}};'>{{text47}}</view>
+  <view id='box48' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor48}};'>{{text48}}</view>
+  <view id='box49' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor49}};'>{{text49}}</view>
 </view><view class='linebox'>
-  <view id='box51' class='numberbox'>{{text51}}</view>
-  <view id='box52' class='numberbox'>{{text52}}</view>
-  <view id='box53' class='numberbox thirdbox'>{{text53}}</view>
-  <view id='box54' class='numberbox'>{{text54}}</view>
-  <view id='box55' class='numberbox'>{{text55}}</view>
-  <view id='box56' class='numberbox thirdbox'>{{text56}}</view>
-  <view id='box57' class='numberbox'>{{text57}}</view>
-  <view id='box58' class='numberbox'>{{text58}}</view>
-  <view id='box59' class='numberbox'>{{text59}}</view>
+  <view id='box51' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor51}};'>{{text51}}</view>
+  <view id='box52' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor52}};'>{{text52}}</view>
+  <view id='box53' bindtap='chooseTap' class='numberbox thirdbox' style='background-color:{{boxcolor53}};'>{{text53}}</view>
+  <view id='box54' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor54}};'>{{text54}}</view>
+  <view id='box55' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor55}};'>{{text55}}</view>
+  <view id='box56' bindtap='chooseTap' class='numberbox thirdbox' style='background-color:{{boxcolor56}};'>{{text56}}</view>
+  <view id='box57' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor57}};'>{{text57}}</view>
+  <view id='box58' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor58}};'>{{text58}}</view>
+  <view id='box59' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor59}};'>{{text59}}</view>
 </view><view class='linebox'>
-  <view id='box61' class='numberbox thirddownbox'>{{text61}}</view>
-  <view id='box62' class='numberbox thirddownbox'>{{text62}}</view>
-  <view id='box63' class='numberbox thirdbox thirddownbox'>{{text63}}</view>
-  <view id='box64' class='numberbox thirddownbox'>{{text64}}</view>
-  <view id='box65' class='numberbox thirddownbox'>{{text65}}</view>
-  <view id='box66' class='numberbox thirdbox thirddownbox'>{{text66}}</view>
-  <view id='box67' class='numberbox thirddownbox'>{{text67}}</view>
-  <view id='box68' class='numberbox thirddownbox'>{{text68}}</view>
-  <view id='box69' class='numberbox thirddownbox'>{{text69}}</view>
+  <view id='box61' bindtap='chooseTap' class='numberbox thirddownbox' style='background-color:{{boxcolor61}};'>{{text61}}</view>
+  <view id='box62' bindtap='chooseTap' class='numberbox thirddownbox' style='background-color:{{boxcolor62}};'>{{text62}}</view>
+  <view id='box63' bindtap='chooseTap' class='numberbox thirdbox thirddownbox' style='background-color:{{boxcolor63}};'>{{text63}}</view>
+  <view id='box64' bindtap='chooseTap' class='numberbox thirddownbox' style='background-color:{{boxcolor64}};'>{{text64}}</view>
+  <view id='box65' bindtap='chooseTap' class='numberbox thirddownbox' style='background-color:{{boxcolor65}};'>{{text65}}</view>
+  <view id='box66' bindtap='chooseTap' class='numberbox thirdbox thirddownbox' style='background-color:{{boxcolor66}};'>{{text66}}</view>
+  <view id='box67' bindtap='chooseTap' class='numberbox thirddownbox' style='background-color:{{boxcolor67}};'>{{text67}}</view>
+  <view id='box68' bindtap='chooseTap' class='numberbox thirddownbox' style='background-color:{{boxcolor68}};'>{{text68}}</view>
+  <view id='box69' bindtap='chooseTap' class='numberbox thirddownbox' style='background-color:{{boxcolor69}};'>{{text69}}</view>
 </view><view class='linebox'>
-  <view id='box71' class='numberbox'>{{text71}}</view>
-  <view id='box72' class='numberbox'>{{text72}}</view>
-  <view id='box73' class='numberbox thirdbox'>{{text73}}</view>
-  <view id='box74' class='numberbox'>{{text74}}</view>
-  <view id='box75' class='numberbox'>{{text75}}</view>
-  <view id='box76' class='numberbox thirdbox'>{{text76}}</view>
-  <view id='box77' class='numberbox'>{{text77}}</view>
-  <view id='box78' class='numberbox'>{{text78}}</view>
-  <view id='box79' class='numberbox'>{{text79}}</view>
+  <view id='box71' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor71}};'>{{text71}}</view>
+  <view id='box72' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor72}};'>{{text72}}</view>
+  <view id='box73' bindtap='chooseTap' class='numberbox thirdbox' style='background-color:{{boxcolor73}};'>{{text73}}</view>
+  <view id='box74' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor74}};'>{{text74}}</view>
+  <view id='box75' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor75}};'>{{text75}}</view>
+  <view id='box76' bindtap='chooseTap' class='numberbox thirdbox' style='background-color:{{boxcolor76}};'>{{text76}}</view>
+  <view id='box77' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor77}};'>{{text77}}</view>
+  <view id='box78' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor78}};'>{{text78}}</view>
+  <view id='box79' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor79}};'>{{text79}}</view>
 </view><view class='linebox'>
-  <view id='box81' class='numberbox'>{{text81}}</view>
-  <view id='box82' class='numberbox'>{{text82}}</view>
-  <view id='box83' class='numberbox thirdbox'>{{text83}}</view>
-  <view id='box84' class='numberbox'>{{text84}}</view>
-  <view id='box85' class='numberbox'>{{text85}}</view>
-  <view id='box86' class='numberbox thirdbox'>{{text86}}</view>
-  <view id='box87' class='numberbox'>{{text87}}</view>
-  <view id='box88' class='numberbox'>{{text88}}</view>
-  <view id='box89' class='numberbox'>{{text89}}</view>
+  <view id='box81' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor81}};'>{{text81}}</view>
+  <view id='box82' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor82}};'>{{text82}}</view>
+  <view id='box83' bindtap='chooseTap' class='numberbox thirdbox' style='background-color:{{boxcolor83}};'>{{text83}}</view>
+  <view id='box84' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor84}};'>{{text84}}</view>
+  <view id='box85' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor85}};'>{{text85}}</view>
+  <view id='box86' bindtap='chooseTap' class='numberbox thirdbox' style='background-color:{{boxcolor86}};'>{{text86}}</view>
+  <view id='box87' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor87}};'>{{text87}}</view>
+  <view id='box88' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor88}};'>{{text88}}</view>
+  <view id='box89' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor89}};'>{{text89}}</view>
 </view><view class='linebox'>
-  <view id='box91' class='numberbox'>{{text91}}</view>
-  <view id='box92' class='numberbox'>{{text92}}</view>
-  <view id='box93' class='numberbox thirdbox'>{{text93}}</view>
-  <view id='box94' class='numberbox'>{{text94}}</view>
-  <view id='box95' class='numberbox'>{{text95}}</view>
-  <view id='box96' class='numberbox thirdbox'>{{text96}}</view>
-  <view id='box97' class='numberbox'>{{text97}}</view>
-  <view id='box98' class='numberbox'>{{text98}}</view>
-  <view id='box99' class='numberbox'>{{text99}}</view>
+  <view id='box91' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor91}};'>{{text91}}</view>
+  <view id='box92' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor92}};'>{{text92}}</view>
+  <view id='box93' bindtap='chooseTap' class='numberbox thirdbox' style='background-color:{{boxcolor93}};'>{{text93}}</view>
+  <view id='box94' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor94}};'>{{text94}}</view>
+  <view id='box95' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor95}};'>{{text95}}</view>
+  <view id='box96' bindtap='chooseTap' class='numberbox thirdbox' style='background-color:{{boxcolor96}};'>{{text96}}</view>
+  <view id='box97' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor97}};'>{{text97}}</view>
+  <view id='box98' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor98}};'>{{text98}}</view>
+  <view id='box99' bindtap='chooseTap' class='numberbox' style='background-color:{{boxcolor99}};'>{{text99}}</view>
 </view>
 </view>
 

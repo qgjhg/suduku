@@ -1,5 +1,6 @@
 // pages/mainpage/mainpage.js
-
+var lastidx=0;
+var lastidy=0;
 
 var num = new Array();
 for (var i = 0; i < 9; i++) {
@@ -8,6 +9,7 @@ for (var i = 0; i < 9; i++) {
     num[i][j] = 0;
   }
 }
+
 Page({
   /**
    * 页面的初始数据
@@ -16,6 +18,41 @@ Page({
 
   },
 
+
+  chooseTap:function chooseBox(e){
+    var id=e.target.id;
+    var idx=id.substr(3,1);
+    var idy=id.substr(4,1);
+
+    for (var i = 1; i < 10; i++) {
+      for (var j = 1; j < 10; j++) {
+        var color = 'boxcolor' + i.toString() + j.toString();
+        if (i == lastidx || j == lastidy) {
+          this.setData({
+            [color]: '#F2F2F2'
+          })
+        }
+      }
+    }
+    lastidx = idx;
+    lastidy = idy;
+    for(var i=1;i<10;i++){
+      for(var j=1;j<10;j++){
+        var color='boxcolor'+i.toString()+j.toString();
+        if((i==idx || j==idy) && (!(i==idx && j==idy))){
+          this.setData({
+            [color]:'#E0FFFF'
+          })
+        }else if(i==idx && j==idy){
+          this.setData({
+            [color]: '#BFEFFF'
+          })
+        }
+      }
+    }
+
+
+  },
 
 
   bindMain: function ran3_3() {
