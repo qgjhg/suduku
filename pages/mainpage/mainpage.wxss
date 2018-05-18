@@ -40,11 +40,26 @@
   line-height: 70rpx;
   overflow: hidden;
 }
+.outbox{
+  margin-left: 40rpx;
+  margin-right: 30rpx;
+  margin-bottom: 50rpx;
+}
 
 .linebox
 {
-  margin-left: 20rpx;
   margin-top: 5rpx;
   display: flex;
 }
 
+.thirdbox
+{
+  margin-right: 5rpx;
+}
+.thirddownbox{
+  margin-bottom: 5rpx;
+}
+
+.btnbox{
+  
+}

@@ -17,7 +17,8 @@
 }
 
 .usermotto {
-  margin-top: 200px;
+  margin-top: 30%;
+  font-family: 'SimHei';
 }
 
 .button

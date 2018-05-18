@@ -62,47 +62,52 @@ Page({
         }
       }
       
-      for(var CTimes=0;CTimes<10;CTimes++){
-        var Cran=Math.floor(Math.random()*3)*3+1;
+      for (var CTimes = 0; CTimes < 10; CTimes++) {
+        var Cran = Math.floor(Math.random() * 3) * 3 + 1;
         var ran = Math.floor(Math.random() * 3);
-        if(ran==0)
-        {
+        if (ran == 0) {
           var reline = num[Cran];
-          num[Cran]=num[Cran-1];
-          num[Cran-1]=reline;
-        }else if(ran==1)
-        {
+          num[Cran] = num[Cran - 1];
+          num[Cran - 1] = reline;
+        } else if (ran == 1) {
           var reline = num[Cran];
           num[Cran] = num[Cran + 1];
           num[Cran + 1] = reline;
-        }else if(ran=2)
-        {
-          var reline = num[Cran-1];
-          num[Cran-1] = num[Cran + 1];
+        } else if (ran == 2) {
+          var reline = num[Cran - 1];
+          num[Cran - 1] = num[Cran + 1];
           num[Cran + 1] = reline;
         }
       }
-      for(var CTimes=0;CTimes<10;CTimes++){
-        var Cran = Math.floor(Math.random() * 3) * 3 + 1;
+
+      for (var RTimes = 0; RTimes < 10; RTimes++) {
+        var Rran = Math.floor(Math.random() * 3) * 3 + 1;
         var ran = Math.floor(Math.random() * 3);
-        var reline = new Array(9);
+        var reline = 0;
         if (ran == 0) {
-          for(var k=0;k<9;k++){
-          reline[k] = num[k][Cran];
-          num[k][Cran] = num[k][Cran - 1];
-          num[k][Cran - 1] = reline[k];
+          for (var k = 0; k < 9; k++) {
+            reline = num[k][Rran];
+            num[k][Rran] = num[k][Rran - 1];
+            num[k][Rran - 1] = reline;
           }
         } else if (ran == 1) {
-          for(var k=0;k<9;k++){
-          reline[k] = num[k][Cran];
-          num[k][Cran] = num[k][Cran + 1];
-          num[k][Cran + 1] = reline[k];}
-        } else if (ran = 2) {
-          for(var k=0;k<9;k++){
-          reline[k] = num[Cran - 1];
-          num[k][Cran - 1] = num[k][Cran + 1];
-          num[k][Cran + 1] = reline[k];}
+          for (var k = 0; k < 9; k++) {
+            reline = num[k][Rran];
+            num[k][Rran] = num[k][Rran + 1];
+            num[k][Rran + 1] = reline;
+          }
+        } else if (ran == 2) {
+          for (var k = 0; k < 9; k++) {
+            reline = num[k][Rran - 1];
+            num[k][Rran - 1] = num[k][Rran + 1];
+            num[k][Rran + 1] = reline;
+          }
         }
+      }
+
+      var blocknum=block();
+      for(var m=0;m<55;m++){
+        num[parseInt(blocknum[m] / 9)][parseInt(blocknum[m] % 9)]='';
       }
 
       for (var line = 1; line < 10; line++) {
@@ -120,11 +125,27 @@ Page({
     function tnine(num,line)
     {
       var outnum=0;
-      if(num+line>8){
-        outnum=num+line-8;
+      if(num-line<0){
+        outnum=num-line+9;
       }else
       {
-        outnum=num+line;
+        outnum=num-line;
+      }
+      return outnum;
+    }
+
+    function block(){
+      var outnum = new Array(81);
+      var totalnum=new Array(81);
+      for(var m=0;m<81;m++){
+      totalnum[m] = m;
+      }
+      for (var i = 0; i < 81; i++) {
+        var ran = Math.floor(Math.random() * (81 - i));
+        outnum[i] = totalnum[ran];
+        for (var j = ran; j < 80 - i; j++) {
+          totalnum[j] = totalnum[j + 1];
+        }
       }
       return outnum;
     }

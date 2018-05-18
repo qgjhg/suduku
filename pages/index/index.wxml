@@ -8,6 +8,6 @@
     </block>
   </view>
   <view class="usermotto">
-    <button class="button" bindtap='bindBtnTap'> Enter </button>
+    <button class="button" bindtap='bindBtnTap'> 进入游戏 </button>
   </view>
 </view>
