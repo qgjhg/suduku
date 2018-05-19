@@ -4,5 +4,9 @@
 <view class='linebox'>
   <view id='1' bindtap='togame' class='numberbox'>1</view>
   <view id='2' bindtap='togame' class='numberbox'>2</view>
+  <view id='3' bindtap='togame' class='numberbox'>3</view>
+  <view id='4' bindtap='togame' class='numberbox'>4</view>
+  <view id='5' bindtap='togame' class='numberbox'>5</view>
+  <view id='6' bindtap='togame' class='numberbox'>6</view>
 </view>
 </view>
