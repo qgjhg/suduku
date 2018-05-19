@@ -3,7 +3,9 @@
     "pages/onload/onload",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/mainpage/mainpage"
+    "pages/mainpage/mainpage",
+    "pages/level/level",
+    "pages/gamepage/gamepage"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,4 +1,5 @@
-<!--pages/mainpage/mainpage.wxml-->
+<!--pages/gamepage/gamepage.wxml-->
+<view>{{title}}</view>
 <view class='timebox'>
 <button class='chongkai' bindtap='chongkai'>重开本局</button>
 <text class='timer'>Time：{{time}}</text>
@@ -100,9 +101,8 @@
 </view>
 
 <view class='btnbox'>
-<button bindtap='donegame' class='numbtn'>完成</button>
-<button id='btn0' bindtap='newgame' class='numbtn'>新局</button>
-<button bindtap='biaoji' style='{{biaojistyle}}' class='numbtn'>标记</button>
+<button bindtap='donegame' class='wancheng'>完成</button>
+<button bindtap='biaoji' style='{{biaojistyle}}' class='biaoji'>标记</button>
 <button id='btn1' bindtap='putnum' class='numbtn'>1</button>
 <button id='btn2' bindtap='putnum' class='numbtn'>2</button>
 <button id='btn3' bindtap='putnum' class='numbtn'>3</button>
@@ -115,4 +115,3 @@
 <button id='btn8' bindtap='putnum' class='numbtn'>8</button>
 <button id='btn9' bindtap='putnum' class='numbtn'>9</button>
 </view>
-<button id='test' bindtap='answerbtn' class='numbtn'>test</button>

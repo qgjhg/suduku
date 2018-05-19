@@ -1,0 +1,30 @@
+/* pages/level/level.wxss */
+
+.numberbox
+{
+  background: #F2F2F2;
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 30rpx;
+  text-align: center;
+  line-height: 80rpx;
+  overflow: hidden;
+}
+
+.outbox{
+  margin-left: 100rpx;
+  margin-right: 30rpx;
+  margin-bottom: 50rpx;
+}
+
+.linebox
+{
+  margin-top: 5rpx;
+  display: flex;
+}
+
+.timebox{
+  text-align: center;
+  margin-top: 5rpx;
+  margin-bottom: 20rpx;
+}

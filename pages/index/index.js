@@ -20,6 +20,11 @@ Page({
       url: '../mainpage/mainpage'
     })
   },
+  bindBtnTap2: function () {
+    wx.navigateTo({
+      url: '../level/level'
+    })
+  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({

@@ -1,0 +1,120 @@
+/* pages/gamepage/gamepage.wxss */
+.button
+{
+  background-color: white;
+}
+
+.button::after
+{
+  border: none;
+}
+
+.numberbox
+{
+  background: #F2F2F2;
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 5rpx;
+  text-align: center;
+  line-height: 70rpx;
+  overflow: hidden;
+}
+.outbox{
+  margin-left: 35rpx;
+  margin-right: 30rpx;
+  margin-bottom: 50rpx;
+}
+
+.linebox
+{
+  margin-top: 5rpx;
+  display: flex;
+}
+
+.thirdbox
+{
+  margin-right: 10rpx;
+}
+.thirddownbox{
+  margin-bottom: 10rpx;
+}
+
+.btnbox{
+  display: flex;
+  margin-left: 35rpx;
+  margin-right: 40rpx;
+  margin-bottom: 30rpx;
+}
+
+.numbtn{
+  width: 90rpx;
+  height: 90rpx;
+  font-size: 90%;
+  padding-left: 0;
+  padding-top:0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+.wancheng{
+  width: 148rpx;
+  height: 90rpx;
+  font-size: 90%;
+  padding-left: 0;
+  padding-top:0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+.biaoji{
+  width: 148rpx;
+  height: 90rpx;
+  font-size: 90%;
+  padding-left: 0;
+  padding-top:0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+.timebox{
+  margin-left: 40rpx;
+  text-align: center;
+  margin-top: 5rpx;
+  margin-bottom: 20rpx;
+  display: inline-flex;
+}
+
+.zanting{
+  width: 150rpx;
+  height: 80rpx;
+  font-size: 80%;
+  padding-left: 0;
+  padding-top:0;
+  padding-right: 0;
+  padding-bottom: 0;
+  float: right;
+  margin-right: 0rpx;
+}
+
+.chongkai{
+  width: 150rpx;
+  height: 80rpx;
+  margin-right: 30rpx;
+  font-size: 80%;
+  padding-left: 0;
+  padding-top:0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+.timer{
+  margin-top: 10rpx;
+  margin-left: 40rpx;
+  margin-right: 75rpx;
+}
+
+.txtcss{
+  padding-left: 0;
+  padding-top:0;
+  padding-right: 0;
+  padding-bottom: 0;
+  margin: 0,0,0,0;
+}
