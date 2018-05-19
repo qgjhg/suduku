@@ -1,0 +1,17 @@
+/* pages/onload/onload.wxss */
+.shouquan{
+  margin-top: 25%;
+  background: white;
+}
+.shouquan::after{
+  border: none;
+}
+.shuoming{
+  margin-left: 100rpx;
+  margin-right: 100rpx;
+  margin-top: 100rpx;
+  background: white;
+  font-size: 80%;
+  color: #7B7B7B;
+  line-height: 2;
+}

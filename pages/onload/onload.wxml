@@ -1,0 +1,8 @@
+<!--pages/onload/onload.wxml-->
+<view class='shuoming'><text>需要您的授权：\n允许使用微信公开信息（昵称、头像等）\n登录小程序</text>
+</view>
+  <button class='shouquan' wx:if="{{canIUse}}" 
+    open-type="getUserInfo" 
+    bindgetuserinfo="bindGetUserInfo">同意授权登录
+  </button>
+<view wx:else>请升级微信版本</view>
