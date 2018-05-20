@@ -121,52 +121,69 @@ Page({
   //enter number
   putnum: function (e) {
     if (lastidx > 0 && lastidy > 0) {
+      var btnid = e.currentTarget.id;
+      var btnnum = parseInt(btnid.substr(3, 1));
       if (isbiaoji == 0) {
-        var btnid = e.currentTarget.id;
-        var btnnum = parseInt(btnid.substr(3, 1));
         var changebox = 'text' + lastidx + lastidy;
         var changestyle = 'otherstyle' + lastidx + lastidy;
         var textstyle = 'txtstyle' + lastidx + lastidy;
-        if (numstatic[lastidx - 1][lastidy - 1] == 1) {
-          num[lastidx - 1][lastidy - 1] = btnnum;
-          this.setData({
-            [changebox]: num[lastidx - 1][lastidy - 1],
-            [changestyle]: 'color:#009393;line-height:70rpx;',
-            [textstyle]: ''
-          })
+        if (checkenternum(btnnum, num, lastidx - 1, lastidy - 1)) {
+          if (numstatic[lastidx - 1][lastidy - 1] == 1) {
+            num[lastidx - 1][lastidy - 1] = btnnum;
+            this.setData({
+              [changebox]: num[lastidx - 1][lastidy - 1],
+              [changestyle]: 'color:#009393;line-height:70rpx;',
+              [textstyle]: ''
+            })
+          }
         }
       } else if (isbiaoji == 1) {
-        var btnid = e.currentTarget.id;
-        var btnnum = btnid.substr(3, 1);
         var changebox = 'text' + lastidx + lastidy;
         var changestyle = 'otherstyle' + lastidx + lastidy;
         var textstyle = 'txtstyle' + lastidx + lastidy;
-        if (numstatic[lastidx - 1][lastidy - 1] == 1) {
-          num[lastidx - 1][lastidy - 1] = 0;
-          var outnum = '';
-          if (numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] == btnnum) {
-            numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] = 0;
-          } else {
-            numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] = btnnum;
-          }
-          for (var k = 0; k < 9; k++) {
-            if (k % 3 == 0 && k != 0) {
-              outnum = outnum + '\n'
-            }
-            if (numbiaoji[lastidx - 1][lastidy - 1][k] != 0) {
-              outnum = outnum + numbiaoji[lastidx - 1][lastidy - 1][k].toString();
+        if (checkenternum(btnnum, num, lastidx - 1, lastidy - 1)) {
+          if (numstatic[lastidx - 1][lastidy - 1] == 1) {
+            num[lastidx - 1][lastidy - 1] = 0;
+            var outnum = '';
+            if (numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] == btnnum) {
+              numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] = 0;
             } else {
-              outnum = outnum + ' ';
+              numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] = btnnum;
             }
-          }
+            for (var k = 0; k < 9; k++) {
+              if (k % 3 == 0 && k != 0) {
+                outnum = outnum + '\n'
+              }
+              if (numbiaoji[lastidx - 1][lastidy - 1][k] != 0) {
+                outnum = outnum + numbiaoji[lastidx - 1][lastidy - 1][k].toString();
+              } else {
+                outnum = outnum + ' ';
+              }
+            }
 
-          this.setData({
-            [changebox]: outnum,
-            [changestyle]: 'color:#009393; line-height:18rpx;',
-            [textstyle]: 'font-size:55%'
-          })
+            this.setData({
+              [changebox]: outnum,
+              [changestyle]: 'color:#009393; line-height:18rpx;',
+              [textstyle]: 'font-size:55%'
+            })
+          }
         }
       }
+      var btnnumindex=0;
+      for(var i=0;i<9;i++){
+        for(var j=0;j<9;j++){
+          if(num[i][j]==btnnum){
+            btnnumindex=btnnumindex+1;
+            if (btnnumindex>=9){
+              var btnstyle='btnstyle'+btnnum;
+              this.setData({
+                [btnstyle]: 'background-color:#FFFFFF'
+              })
+            }
+          }
+        }
+      }
+
     }
   },
 
@@ -255,50 +272,6 @@ Page({
     }
   },
 
-  chongkai: function () {
-    var that = this;
-    wx.showModal({
-      title: '重开本局',
-      content: '确认重新开始本局游戏？',
-      success: function (res) {
-        if (res.confirm) {
-          nowtime = 0;
-          for (var i = 0; i < 9; i++) {
-            for (var j = 0; j < 9; j++) {
-              for (var k = 0; k < 9; k++) {
-                numbiaoji[i][j][k] = 0;
-              }
-            }
-          }
-          for (var line = 1; line < 10; line++) {
-            for (var up = 1; up < 10; up++) {
-              var txt = 'txtstyle' + line + up;
-              var boxstyle = 'style' + line + up;
-              var boxname = 'text' + line + up;
-              var otherstyle = 'otherstyle' + line + up;
-              if (numstatic[line - 1][up - 1] == 1) {
-                num[line - 1][up - 1] = 0;
-              }
-              if (num[line - 1][up - 1] != 0) {
-                that.setData({
-                  [boxname]: num[line - 1][up - 1]
-                })
-              } else {
-                that.setData({
-                  [boxname]: ''
-                })
-              }
-              that.setData({
-                [txt]: '',
-                [boxstyle]: 'background-color:#F2F2F2',
-                [otherstyle]: ''
-              })
-            }
-          }
-        }
-      }
-    })
-  },
 
   answerbtn: function () {
     var result = answer();
@@ -336,6 +309,18 @@ Page({
         num = [[2,5,0,9,0,8,0,0,0], [0,0,0,0,1,0,0,0,0], [8,0,4,0,0,0,0,0,0], [3,1,0,4,6,0,9,0,0], [0,0,5,2,0,3,4,0,0], [0,0,7,0,9,1,0,2,3], [0,0,0,0,0,0,6,0,7], [0,0,0,0,4,0,0,0,0], [0,0,0,1,0,7,0,5,4]]
       } else if (level == 6) {
         num = [[0,0,0,0,0,1,0,8,4], [0,5,1,0,2,0,7,0,0], [8,0,0,0,0,0,0,3,0], [0,0,0,0,1,8,0,0,0], [4,6,2,0,0,0,8,5,1], [0,0,0,2,4,0,0,0,0], [0,1,0,0,0,0,0,0,9], [0,0,8,0,7,0,3,1,0], [7,4,0,1,0,0,0,0,0]]
+      } else if (level == 7) {
+        num = [[0,0,3,0,0,0,0,0,5],[0,0,0,0,4,0,0,0,0],[2,8,1,0,0,0,9,0,3],[4,0,0,7,5,0,0,0,0],[7,9,0,1,0,4,0,5,8],[0,0,0,0,6,8,0,0,4],[5,0,2,0,0,0,4,3,1],[0,0,0,0,2,0,0,0,0],[3,0,0,0,0,0,6,0,0]]
+      } else if (level == 8) {
+        num = [[0,3,2,9,0,0,0,0,4], [0,6,0,0,1,0,7,0,0], [0,9,0,0,0,3,5,0,0], [0,0,0,1,0,0,0,0,0], [8,0,7,4,0,5,9,0,3], [0,0,0,0,0,7,0,0,0], [0,0,3,5,0,0,0,6,0], [0,0,4,0,7,0,0,9,0], [9,0,0,0,0,1,3,4,0]]
+      } else if (level == 9) {
+        num = [[0,1,0,2,0,0,3,0,0], [0,0,7,0,8,5,0,0,0], [0,0,0,0,9,0,0,0,6], [5,0,0,0,0,3,6,0,8], [0,2,0,0,1,0,0,3,0], [3,0,9,8,0,0,0,0,4], [8,0,0,0,3,0,0,0,0], [0,0,0,9,6,0,4,0,0], [0,0,2,0,0,4,0,6,0]]
+      } else if (level == 10) {
+        num = [[0,0,8,0,0,0,0,7,0], [0,0,1,9,8,0,0,4,0], [0,6,0,2,0,0,0,5,3], [8,0,2,0,0,0,0,0,0], [0,1,0,0,7,0,0,8,0], [0,0,0,0,0,0,1,0,5], [2,7,0,0,0,5,0,6,0], [0,9,0,0,3,6,2,0,0], [0,8,0,0,0,0,5,0,0]]
+      } else if (level == 11) {
+        num = [[0,1,0,0,0,2,0,0,0], [8,0,0,7,0,5,0,2,1], [0,0,4,0,0,0,0,0,7], [0,0,0,4,9,0,0,0,8], [0,0,1,5,0,7,6,0,0], [2,0,0,0,1,8,0,0,0], [6,0,0,0,0,0,8,0,0], [1,5,0,8,0,4,0,0,9], [0,0,0,3,0,0,0,5,0]]
+      } else if (level == 12) {
+        num = [[0,8,0,0,0,3,0,0,5], [0,1,0,0,6,0,0,0,0], [0,7,2,5,0,0,0,0,0], [7,4,8,0,0,6,0,0,0], [9,0,0,0,0,0,0,0,1], [0,0,0,9,0,0,4,7,3], [0,0,0,0,0,7,8,3,0], [0,0,0,0,3,0,0,2,0], [4,0,0,6,0,0,0,5,0]]
       }
     }
     for(var i=0;i<9;i++){
@@ -353,7 +338,12 @@ Page({
         }
       }
     }
-
+    for (var kk = 1; kk < 10; kk++) {
+      var btnstyle = 'btnstyle' + kk;
+      this.setData({
+        [btnstyle]: 'background-color:#F8F8F8'
+      })
+    }
     show(that);
   },
 
@@ -558,6 +548,32 @@ function checknum(getnumbox, x, y) {
     for (var j = 0; j < 9; j++) {
       if (numbelong[x][y] == numbelong[i][j]) {
         if ((!(i == x && j == y)) && getnumbox[i][j] == getnumbox[x][y]) {
+          returnvalue = false;
+        }
+      }
+    }
+  }
+  return returnvalue;
+}
+
+//check enter num
+function checkenternum(enternum,num, x, y) {
+  var returnvalue = true;
+  for (var i = 0; i < 9; i++) {
+    if (i != x && num[i][y] == enternum) {
+      returnvalue = false;
+    }
+  }
+  for (var j = 0; j < 9; j++) {
+    if (j != y && num[x][j] == enternum) {
+      returnvalue = false;
+    }
+  }
+
+  for (var i = 0; i < 9; i++) {
+    for (var j = 0; j < 9; j++) {
+      if (numbelong[x][y] == numbelong[i][j]) {
+        if ((!(i == x && j == y)) && num[i][j] == enternum) {
           returnvalue = false;
         }
       }

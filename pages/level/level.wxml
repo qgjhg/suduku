@@ -1,5 +1,5 @@
 <!--pages/level/level.wxml-->
-<view class='timebox'>level</view>
+<view class='timebox'>Stage</view>
 <view class='outbox'>
 <view class='linebox'>
   <view id='1' bindtap='togame' class='numberbox'>1</view>
@@ -8,5 +8,13 @@
   <view id='4' bindtap='togame' class='numberbox'>4</view>
   <view id='5' bindtap='togame' class='numberbox'>5</view>
   <view id='6' bindtap='togame' class='numberbox'>6</view>
+</view>
+<view class='linebox'>
+  <view id='7' bindtap='togame' class='numberbox'>7</view>
+  <view id='8' bindtap='togame' class='numberbox'>8</view>
+  <view id='9' bindtap='togame' class='numberbox'>9</view>
+  <view id='10' bindtap='togame' class='numberbox'>10</view>
+  <view id='11' bindtap='togame' class='numberbox'>11</view>
+  <view id='12' bindtap='togame' class='numberbox'>12</view>
 </view>
 </view>

@@ -121,50 +121,52 @@ Page({
   //enter number
   putnum: function (e) {
     if (lastidx > 0 && lastidy > 0) {
+      var btnid = e.currentTarget.id;
+      var btnnum = parseInt(btnid.substr(3, 1));
       if (isbiaoji == 0) {
-        var btnid = e.currentTarget.id;
-        var btnnum = parseInt(btnid.substr(3, 1));
         var changebox = 'text' + lastidx + lastidy;
         var changestyle = 'otherstyle' + lastidx + lastidy;
         var textstyle = 'txtstyle' + lastidx + lastidy;
-        if (numstatic[lastidx - 1][lastidy - 1] == 1) {
-          num[lastidx - 1][lastidy - 1] = btnnum;
-          this.setData({
-            [changebox]: num[lastidx - 1][lastidy - 1],
-            [changestyle]: 'color:#009393;line-height:70rpx;',
-            [textstyle]: ''
-          })
+        if (checkenternum(btnnum, num, lastidx - 1, lastidy - 1)) {
+          if (numstatic[lastidx - 1][lastidy - 1] == 1) {
+            num[lastidx - 1][lastidy - 1] = btnnum;
+            this.setData({
+              [changebox]: num[lastidx - 1][lastidy - 1],
+              [changestyle]: 'color:#009393;line-height:70rpx;',
+              [textstyle]: ''
+            })
+          }
         }
       } else if (isbiaoji == 1) {
-        var btnid = e.currentTarget.id;
-        var btnnum = btnid.substr(3, 1);
         var changebox = 'text' + lastidx + lastidy;
         var changestyle = 'otherstyle' + lastidx + lastidy;
         var textstyle = 'txtstyle' + lastidx + lastidy;
-        if (numstatic[lastidx - 1][lastidy - 1] == 1) {
-          num[lastidx-1][lastidy-1]=0;
-          var outnum = '';
-          if (numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] == btnnum) {
-            numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] = 0;
-          } else {
-            numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] = btnnum;
-          }
-          for (var k = 0; k < 9; k++) {
-            if (k % 3 == 0 && k != 0) {
-              outnum = outnum + '\n'
-            }
-            if (numbiaoji[lastidx - 1][lastidy - 1][k] != 0) {
-              outnum = outnum + numbiaoji[lastidx - 1][lastidy - 1][k].toString();
+        if (checkenternum(btnnum, num, lastidx - 1, lastidy - 1)) {
+          if (numstatic[lastidx - 1][lastidy - 1] == 1) {
+            num[lastidx - 1][lastidy - 1] = 0;
+            var outnum = '';
+            if (numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] == btnnum) {
+              numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] = 0;
             } else {
-              outnum = outnum + ' ';
+              numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] = btnnum;
             }
-          }
+            for (var k = 0; k < 9; k++) {
+              if (k % 3 == 0 && k != 0) {
+                outnum = outnum + '\n'
+              }
+              if (numbiaoji[lastidx - 1][lastidy - 1][k] != 0) {
+                outnum = outnum + numbiaoji[lastidx - 1][lastidy - 1][k].toString();
+              } else {
+                outnum = outnum + ' ';
+              }
+            }
 
-          this.setData({
-            [changebox]: outnum,
-            [changestyle]: 'color:#009393; line-height:18rpx;',
-            [textstyle]: 'font-size:55%'
-          })
+            this.setData({
+              [changebox]: outnum,
+              [changestyle]: 'color:#009393; line-height:18rpx;',
+              [textstyle]: 'font-size:55%'
+            })
+          }
         }
       }
     }
@@ -794,6 +796,32 @@ function boxcheck(checkbox) {
       var njy = parseInt(j / 3);
       if (num[exx + nix][exy + niy] == num[exx + njx][exy + njy]) {
         returnvalue = false;
+      }
+    }
+  }
+  return returnvalue;
+}
+
+//check enter num
+function checkenternum(enternum, num, x, y) {
+  var returnvalue = true;
+  for (var i = 0; i < 9; i++) {
+    if (i != x && num[i][y] == enternum) {
+      returnvalue = false;
+    }
+  }
+  for (var j = 0; j < 9; j++) {
+    if (j != y && num[x][j] == enternum) {
+      returnvalue = false;
+    }
+  }
+
+  for (var i = 0; i < 9; i++) {
+    for (var j = 0; j < 9; j++) {
+      if (numbelong[x][y] == numbelong[i][j]) {
+        if ((!(i == x && j == y)) && num[i][j] == enternum) {
+          returnvalue = false;
+        }
       }
     }
   }

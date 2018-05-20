@@ -1,7 +1,6 @@
 <!--pages/gamepage/gamepage.wxml-->
 <view>{{title}}</view>
 <view class='timebox'>
-<button class='chongkai' bindtap='chongkai'>重开本局</button>
 <text class='timer'>Time：{{time}}</text>
 <button bindtap='pause' class='zanting'>暂停</button>
 </view>
@@ -103,15 +102,15 @@
 <view class='btnbox'>
 <button bindtap='donegame' class='wancheng'>完成</button>
 <button bindtap='biaoji' style='{{biaojistyle}}' class='biaoji'>标记</button>
-<button id='btn1' bindtap='putnum' class='numbtn'>1</button>
-<button id='btn2' bindtap='putnum' class='numbtn'>2</button>
-<button id='btn3' bindtap='putnum' class='numbtn'>3</button>
+<button id='btn1' bindtap='putnum' style='{{btnstyle1}}' class='numbtn'>1</button>
+<button id='btn2' bindtap='putnum' style='{{btnstyle2}}' class='numbtn'>2</button>
+<button id='btn3' bindtap='putnum' style='{{btnstyle3}}' class='numbtn'>3</button>
 </view>
 <view class='btnbox'>
-<button id='btn4' bindtap='putnum' class='numbtn'>4</button>
-<button id='btn5' bindtap='putnum' class='numbtn'>5</button>
-<button id='btn6' bindtap='putnum' class='numbtn'>6</button>
-<button id='btn7' bindtap='putnum' class='numbtn'>7</button>
-<button id='btn8' bindtap='putnum' class='numbtn'>8</button>
-<button id='btn9' bindtap='putnum' class='numbtn'>9</button>
+<button id='btn4' bindtap='putnum' style='{{btnstyle4}}' class='numbtn'>4</button>
+<button id='btn5' bindtap='putnum' style='{{btnstyle5}}' class='numbtn'>5</button>
+<button id='btn6' bindtap='putnum' style='{{btnstyle6}}' class='numbtn'>6</button>
+<button id='btn7' bindtap='putnum' style='{{btnstyle7}}' class='numbtn'>7</button>
+<button id='btn8' bindtap='putnum' style='{{btnstyle8}}' class='numbtn'>8</button>
+<button id='btn9' bindtap='putnum' style='{{btnstyle9}}' class='numbtn'>9</button>
 </view>
