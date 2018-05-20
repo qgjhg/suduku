@@ -141,14 +141,15 @@ Page({
         var changebox = 'text' + lastidx + lastidy;
         var changestyle = 'otherstyle' + lastidx + lastidy;
         var textstyle = 'txtstyle' + lastidx + lastidy;
-        if (checkenternum(btnnum, num, lastidx - 1, lastidy - 1)) {
           if (numstatic[lastidx - 1][lastidy - 1] == 1) {
             num[lastidx - 1][lastidy - 1] = 0;
             var outnum = '';
             if (numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] == btnnum) {
               numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] = 0;
             } else {
-              numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] = btnnum;
+              if (checkenternum(btnnum, num, lastidx - 1, lastidy - 1)) {
+                numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] = btnnum;
+              }
             }
             for (var k = 0; k < 9; k++) {
               if (k % 3 == 0 && k != 0) {
@@ -167,7 +168,6 @@ Page({
               [textstyle]: 'font-size:55%'
             })
           }
-        }
       }
       var btnnumindex=0;
       for(var i=0;i<9;i++){
