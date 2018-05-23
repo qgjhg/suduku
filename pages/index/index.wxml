@@ -8,7 +8,7 @@
     </block>
   </view>
   <view class="usermotto">
-    <button class="button" bindtap='bindBtnTap2'> 战役模式 </button>
+    <button class="button" bindtap='bindBtnTap2'> 关卡模式 </button>
     <button class="button" bindtap='bindBtnTap'> 随机模式 </button>
   </view>
 </view>

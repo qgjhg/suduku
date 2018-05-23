@@ -1,46 +1,18 @@
-// pages/onload/onload.js
+// pages/choosepage/choosepage.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    //判断小程序的API，回调，参数，组件等是否在当前版本可用。
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 查看是否授权
-    wx.getSetting({
-      success: function (res) {
-        if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success: function (res) {
-              //已授权
-              wx.navigateTo({
-                url: '../choosepage/choosepage'
-              })
-            }
-          })
-        }
-      }
-    })
-  },
   
-  bindGetUserInfo: function (e) {
-    console.log(e.detail.userInfo)
-    if (e.detail.userInfo) {
-      wx.navigateTo({
-        url: '../index/index'
-      })
-    } else {
-      wx.navigateBack({
-        delta: -1
-      })
-    }
   },
 
   /**
