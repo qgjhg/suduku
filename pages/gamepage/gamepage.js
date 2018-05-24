@@ -53,15 +53,13 @@ Page({
     var id = e.currentTarget.id;
     var idx = parseInt(id.substr(3, 1));
     var idy = parseInt(id.substr(4, 1));
-
+    var param={};
     if (lastsiu == 'shizi') {
       for (var i = 1; i < 10; i++) {
         for (var j = 1; j < 10; j++) {
           var color = 'style' + i.toString() + j.toString();
           if (i == lastidx || j == lastidy) {
-            this.setData({
-              [color]: 'background-color:#F2F2F2;'
-            })
+            param[color] ='background-color:#F2F2F2;';
           }
         }
       }
@@ -70,9 +68,7 @@ Page({
         for (var j = 1; j < 10; j++) {
           var color = 'style' + i.toString() + j.toString();
           if ((num[i - 1][j - 1] == numnow) || (lastidx == i && lastidy == j)) {
-            this.setData({
-              [color]: 'background-color:#F2F2F2;'
-            })
+            param[color] = 'background-color:#F2F2F2;';
           }
         }
       }
@@ -84,13 +80,9 @@ Page({
         for (var j = 1; j < 10; j++) {
           var color = 'style' + i.toString() + j.toString();
           if ((i == idx || j == idy) && (!(i == idx && j == idy))) {
-            this.setData({
-              [color]: 'background-color:#E0FFFF;'
-            })
+              param[color] = 'background-color:#E0FFFF;';
           } else if (i == idx && j == idy) {
-            this.setData({
-              [color]: 'background-color:#BFEFFF;'
-            })
+            param[color] = 'background-color:#BFEFFF;';
           }
         }
       }
@@ -102,13 +94,9 @@ Page({
         for (var j = 1; j < 10; j++) {
           var color = 'style' + i.toString() + j.toString();
           if ((num[i - 1][j - 1] == numnow) && (!(i == idx && j == idy))) {
-            this.setData({
-              [color]: 'background-color:#FFD1A4;'
-            })
+            param[color] = 'background-color:#FFD1A4;';
           } else if (i == idx && j == idy) {
-            this.setData({
-              [color]: 'background-color:#FF8000;'
-            })
+            param[color] = 'background-color:#FF8000;';
           }
         }
       }
@@ -116,10 +104,12 @@ Page({
       lastidx = idx;
       lastidy = idy;
     }
+    this.setData(param);
   },
 
   //enter number
   putnum: function (e) {
+    var param={};
     if (lastidx > 0 && lastidy > 0) {
       var btnid = e.currentTarget.id;
       var btnnum = parseInt(btnid.substr(3, 1));
@@ -130,44 +120,39 @@ Page({
         if (checkenternum(btnnum, num, lastidx - 1, lastidy - 1)) {
           if (numstatic[lastidx - 1][lastidy - 1] == 1) {
             num[lastidx - 1][lastidy - 1] = btnnum;
-            this.setData({
-              [changebox]: num[lastidx - 1][lastidy - 1],
-              [changestyle]: 'color:#009393;line-height:70rpx;',
-              [textstyle]: ''
-            })
+            param[changebox] = num[lastidx - 1][lastidy - 1];
+            param[changestyle] = 'color:#009393;line-height:70rpx;';
+            param[textstyle]='';
           }
         }
       } else if (isbiaoji == 1) {
         var changebox = 'text' + lastidx + lastidy;
         var changestyle = 'otherstyle' + lastidx + lastidy;
         var textstyle = 'txtstyle' + lastidx + lastidy;
-          if (numstatic[lastidx - 1][lastidy - 1] == 1) {
-            num[lastidx - 1][lastidy - 1] = 0;
-            var outnum = '';
-            if (numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] == btnnum) {
-              numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] = 0;
-            } else {
-              if (checkenternum(btnnum, num, lastidx - 1, lastidy - 1)) {
-                numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] = btnnum;
-              }
+        if (numstatic[lastidx - 1][lastidy - 1] == 1) {
+          num[lastidx - 1][lastidy - 1] = 0;
+          var outnum = '';
+          if (numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] == btnnum) {
+            numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] = 0;
+          } else {
+            if (checkenternum(btnnum, num, lastidx - 1, lastidy - 1)) {
+              numbiaoji[lastidx - 1][lastidy - 1][btnnum - 1] = btnnum;
             }
-            for (var k = 0; k < 9; k++) {
-              if (k % 3 == 0 && k != 0) {
-                outnum = outnum + '\n'
-              }
-              if (numbiaoji[lastidx - 1][lastidy - 1][k] != 0) {
-                outnum = outnum + numbiaoji[lastidx - 1][lastidy - 1][k].toString();
-              } else {
-                outnum = outnum + ' ';
-              }
-            }
-
-            this.setData({
-              [changebox]: outnum,
-              [changestyle]: 'color:#009393; line-height:18rpx;',
-              [textstyle]: 'font-size:55%'
-            })
           }
+          for (var k = 0; k < 9; k++) {
+            if (k % 3 == 0 && k != 0) {
+              outnum = outnum + '\n'
+            }
+            if (numbiaoji[lastidx - 1][lastidy - 1][k] != 0) {
+              outnum = outnum + numbiaoji[lastidx - 1][lastidy - 1][k].toString();
+            } else {
+              outnum = outnum + ' ';
+            }
+          }
+          param[changebox] = outnum;
+          param[changestyle] = 'color:#009393; line-height:18rpx;';
+          param[textstyle] = 'font-size:55%';
+        }
       }
       var btnnumindex=0;
       for(var i=0;i<9;i++){
@@ -176,15 +161,13 @@ Page({
             btnnumindex=btnnumindex+1;
             if (btnnumindex>=9){
               var btnstyle='btnstyle'+btnnum;
-              this.setData({
-                [btnstyle]: 'background-color:#FFFFFF'
-              })
+              param[btnstyle] = 'background-color:#FFFFFF'
             }
           }
         }
       }
-
     }
+    this.setData(param);
   },
 
   //finish game
@@ -338,12 +321,13 @@ Page({
         }
       }
     }
+    var param={};
     for (var kk = 1; kk < 10; kk++) {
       var btnstyle = 'btnstyle' + kk;
-      this.setData({
-        [btnstyle]: 'background-color:#F8F8F8'
-      })
+      param[btnstyle] = 'background-color:#F8F8F8';
     }
+    this.setData(param);
+
     show(that);
   },
 
@@ -371,6 +355,7 @@ function Countdown(that) {
 }
 
 function show(that) {
+  var param = {};
   for (var line = 1; line < 10; line++) {
     for (var up = 1; up < 10; up++) {
       var boxname = 'text' + line + up;
@@ -378,25 +363,18 @@ function show(that) {
       var otherstyle = 'otherstyle' + line + up;
       var boxstyle = 'style' + line + up;
       if (num[line - 1][up - 1] != 0) {
-        that.setData({
-          [boxname]: num[line - 1][up - 1]
-        })
+        param[boxname]=num[line-1][up-1];
       } else {
-        that.setData({
-          [boxname]: ''
-        })
+        param[boxname] = '';
       }
-      that.setData({
-        [txt]: '',
-        [boxstyle]: 'background-color:#F2F2F2',
-        [otherstyle]: ''
-      })
+      param[txt]='';
+      param[boxstyle] = 'background-color:#F2F2F2';
+      param[otherstyle]='';
     }
   }
   isbiaoji = 0;
-  that.setData({
-    biaojistyle: ''
-  })
+  param['biaojistyle']='';
+  that.setData(param);
   Countdown(that);
 }
 
@@ -454,7 +432,6 @@ function answer() {
       }
     }
   }
-  console.log('start');
   var maxtimes = 100000000000;
   var x = 0;
   var y = 0;

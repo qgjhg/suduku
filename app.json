@@ -6,7 +6,8 @@
     "pages/mainpage/mainpage",
     "pages/level/level",
     "pages/gamepage/gamepage",
-    "pages/choosepage/choosepage"
+    "pages/choosepage/choosepage",
+    "pages/intro_sudu/intro_sudu"
   ],
   "window": {
     "backgroundTextStyle": "light",

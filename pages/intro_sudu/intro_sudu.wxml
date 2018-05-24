@@ -1,0 +1,10 @@
+<!--pages/intro_sudu/intro_sudu.wxml-->
+<view class='introtext'>
+<textarea class='introarea'>18世纪末，瑞士数学家欧拉发明了一种叫做“拉丁方阵（Latin Square）”的游戏。虽然最初这个游戏并没有风靡起来，但随着时间的推移，在20世纪70年代的美国，这个游戏以“数字拼图（Number Place）”的名字迅速流行起来，之后逐渐流传到日本、英国，到现在已经成为了红遍全球的智力游戏。</textarea>
+
+<view class='introarea'><text style='font-weight:bold'>游戏具体规则如下：\n</text><text>在一个（9×9）的九宫格中给出一些初始数字。玩家需要在九宫格内填入缺失的数字（1-9），填入数字后满足：\n1. 每一行的 9 个数字各不相同\n2. 每一列的 9 个数字各不相同\n3. 每一个标识出的3×3的小正方形内9个数字各不相同</text>
+</view>
+<view><text>\n\n</text></view>
+<button bindtap='entergame' class='btn'>进入游戏</button>
+<view><text>\n\n\n\n\n\n\n\n</text></view>
+</view>

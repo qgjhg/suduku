@@ -1,46 +1,39 @@
-// pages/onload/onload.js
+// pages/intro_sudu/intro_sudu.js
 Page({
 
+  entergame: function () {
+    wx.showModal({
+      title: '选择游戏模式',
+      content: '1.关卡模式，选择数独关卡。\n2.随机模式，开始随机数独。',
+      cancelText:'关卡模式',
+      cancelColor:'#000000',
+      confirmText:'随机模式',
+      confirmColor:'#000000',
+      success:function(res){
+        if(res.confirm){
+          wx.navigateTo({
+            url: '../mainpage/mainpage',
+          })
+        }else if(res.cancel){
+          wx.navigateTo({
+            url: '../level/level',
+          })
+        }
+      }
+    })
+  },
   /**
    * 页面的初始数据
    */
   data: {
-    //判断小程序的API，回调，参数，组件等是否在当前版本可用。
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 查看是否授权
-    wx.getSetting({
-      success: function (res) {
-        if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success: function (res) {
-              //已授权
-              wx.navigateTo({
-                url: '../choosepage/choosepage'
-              })
-            }
-          })
-        }
-      }
-    })
-  },
   
-  bindGetUserInfo: function (e) {
-    console.log(e.detail.userInfo)
-    if (e.detail.userInfo) {
-      wx.navigateTo({
-        url: '../choosepage/choosepage'
-      })
-    } else {
-      wx.navigateBack({
-        delta: -1
-      })
-    }
   },
 
   /**

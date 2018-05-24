@@ -1,6 +1,11 @@
 // pages/choosepage/choosepage.js
 Page({
 
+  togame1:function(){
+    wx.navigateTo({
+      url: '../intro_sudu/intro_sudu',
+    })
+  },
   /**
    * 页面的初始数据
    */

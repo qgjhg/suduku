@@ -1,23 +1,24 @@
 <!--pages/choosepage/choosepage.wxml-->
-<view class='title'>请点击选择游戏</view>
 
 <view class='imgbox'>
-<view class='img' bindtap='togame'>
+<view class='img' bindtap='togame1'>
 <image id='suduku' class='img' mode='scaleToFill' src="../image/suduku.jpg"></image>
 <view class='imginfo'>数独</view>
 </view>
-<view class='img' bindtap='togame'>
+<view class='blackview'></view>
+<view class='img'>
 <image id='doing1' style='background-color:#F2F2F2' class='img' mode='scaleToFill' src=""></image>
 <view class='imginfo'>未完成</view>
 </view>
 </view>
 
 <view class='imgbox'>
-<view class='img' bindtap='togame'>
+<view class='img'>
 <image id='doing2' style='background-color:#F2F2F2' class='img' mode='scaleToFill' src=""></image>
 <view class='imginfo'>未完成</view>
 </view>
-<view class='img' bindtap='togame'>
+<view class='blackview'></view>
+<view class='img'>
 <image id='doing3' style='background-color:#F2F2F2' class='img' mode='scaleToFill' src=""></image>
 <view class='imginfo'>未完成</view>
 </view>
