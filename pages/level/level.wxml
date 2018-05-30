@@ -24,4 +24,28 @@
   <view id='17' bindtap='togame' class='numberbox'>17</view>
   <view id='18' bindtap='togame' class='numberbox'>18</view>
 </view>
+<view class='linebox'>
+  <view id='19' bindtap='togame' class='numberbox'>13</view>
+  <view id='20' bindtap='togame' class='numberbox'>14</view>
+  <view id='21' bindtap='togame' class='numberbox'>15</view>
+  <view id='22' bindtap='togame' class='numberbox'>16</view>
+  <view id='23' bindtap='togame' class='numberbox'>17</view>
+  <view id='24' bindtap='togame' class='numberbox'>18</view>
+</view>
+<view class='linebox'>
+  <view id='25' bindtap='togame' class='numberbox'>13</view>
+  <view id='26' bindtap='togame' class='numberbox'>14</view>
+  <view id='27' bindtap='togame' class='numberbox'>15</view>
+  <view id='28' bindtap='togame' class='numberbox'>16</view>
+  <view id='29' bindtap='togame' class='numberbox'>17</view>
+  <view id='30' bindtap='togame' class='numberbox'>18</view>
+</view>
+<view class='linebox'>
+  <view id='31' bindtap='togame' class='numberbox'>13</view>
+  <view id='32' bindtap='togame' class='numberbox'>14</view>
+  <view id='33' bindtap='togame' class='numberbox'>15</view>
+  <view id='34' bindtap='togame' class='numberbox'>16</view>
+  <view id='35' bindtap='togame' class='numberbox'>17</view>
+  <view id='36' bindtap='togame' class='numberbox'>18</view>
+</view>
 </view>
